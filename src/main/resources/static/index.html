@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cosi test task</title>
+    <script src="js/angular.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body ng-app="cosi.task.app">
+
+    <form role="form" class="form-horizontal"
+          ng-submit="ctrl.calc()"
+          ng-controller="calcController as ctrl">
+        <fieldset>
+            <legend class="caption">Result = X1 + 5*X2/X1</legend>
+            <div class="form-group">
+                <label for="x1" class="col-lg-2 control-label">
+                    X1
+                </label>
+                <input class="col-lg-4" type="number" id="x1" required
+                       name="x1" ng-model="ctrl.x1"/>
+                <span ng-show="x1.$error.number">Only digits allowed</span>
+            </div>
+            <div class="form-group">
+                <label for="x2" class="col-lg-2 control-label">
+                    X2
+                </label>
+                <input class="col-lg-4" type="number" id="x2" required
+                       name="x2" ng-model="ctrl.x2"/>
+                <span ng-show="x1.$error.number">Only digits allowed</span>
+            </div>
+            <div class="form-group">
+                <label for="result" class="col-lg-2 control-label">
+                    Result:
+                </label>
+                <input class="col-lg-4" type="text" id="result" readonly
+                       name="result" ng-model="ctrl.result"/>
+            </div>
+        </fieldset>
+        <input type="submit" class="btn btn-primary" value="Do Calculation"/>
+    </form>
+
+</body>
+</html>
